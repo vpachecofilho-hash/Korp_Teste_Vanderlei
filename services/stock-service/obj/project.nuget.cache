@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Xk8vgPkzOfE=",
+  "dgSpecHash": "27uITBMc+J8=",
   "success": true,
-  "projectFilePath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj",
+  "projectFilePath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Ray\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\Ray\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

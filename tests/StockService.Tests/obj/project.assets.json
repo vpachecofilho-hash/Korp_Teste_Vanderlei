@@ -6668,11 +6668,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\tests\\StockService.Tests\\StockService.Tests.csproj",
+      "projectUniqueName": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\tests\\StockService.Tests\\StockService.Tests.csproj",
       "projectName": "StockService.Tests",
-      "projectPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\tests\\StockService.Tests\\StockService.Tests.csproj",
+      "projectPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\tests\\StockService.Tests\\StockService.Tests.csproj",
       "packagesPath": "C:\\Users\\Ray\\.nuget\\packages\\",
-      "outputPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\tests\\StockService.Tests\\obj\\",
+      "outputPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\tests\\StockService.Tests\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ray\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -6687,8 +6687,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj": {
-              "projectPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj"
+            "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj": {
+              "projectPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj"
             }
           }
         }

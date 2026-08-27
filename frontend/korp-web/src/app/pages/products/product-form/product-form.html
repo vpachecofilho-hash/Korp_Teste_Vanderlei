@@ -1,0 +1,32 @@
+<h2>Novo produto</h2>
+
+<form [formGroup]="form" (ngSubmit)="save()">
+
+  <div>
+    <label>Código</label>
+    <input formControlName="code">
+  </div>
+
+  <div>
+    <label>Descrição</label>
+    <input formControlName="description">
+  </div>
+
+  <div>
+    <label>Saldo</label>
+    <input
+      type="number"
+      formControlName="stock">
+  </div>
+
+  <button
+    type="submit"
+    [disabled]="form.invalid || loading">
+
+    {{ loading ? 'Salvando...' : 'Salvar' }}
+
+  </button>
+
+</form>
+
+<p>{{ message }}</p>

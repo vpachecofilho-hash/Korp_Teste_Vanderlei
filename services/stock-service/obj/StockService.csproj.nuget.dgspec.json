@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj": {}
+    "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj": {}
   },
   "projects": {
-    "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj": {
+    "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj",
+        "projectUniqueName": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj",
         "projectName": "StockService",
-        "projectPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj",
+        "projectPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\StockService.csproj",
         "packagesPath": "C:\\Users\\Ray\\.nuget\\packages\\",
-        "outputPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\stock-service\\obj\\",
+        "outputPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\stock-service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Ray\\AppData\\Roaming\\NuGet\\NuGet.Config"

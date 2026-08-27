@@ -2698,11 +2698,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\billing-service\\BillingService.csproj",
+      "projectUniqueName": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\billing-service\\BillingService.csproj",
       "projectName": "BillingService",
-      "projectPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\billing-service\\BillingService.csproj",
+      "projectPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\billing-service\\BillingService.csproj",
       "packagesPath": "C:\\Users\\Ray\\.nuget\\packages\\",
-      "outputPath": "E:\\Projetos\\Korp\\C#\\Korp_Teste_Vanderlei\\services\\billing-service\\obj\\",
+      "outputPath": "E:\\Projetos\\Korp\\CSHARP\\Korp_Teste_Vanderlei\\services\\billing-service\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ray\\AppData\\Roaming\\NuGet\\NuGet.Config"

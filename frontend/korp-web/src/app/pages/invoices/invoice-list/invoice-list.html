@@ -1,0 +1,48 @@
+<h2>Notas fiscais</h2>
+
+<p *ngIf="loading">
+  Carregando...
+</p>
+
+<p *ngIf="errorMessage">
+  {{ errorMessage }}
+</p>
+
+<table *ngIf="!loading && invoices.length > 0">
+  <thead>
+    <tr>
+      <th>Número</th>
+      <th>Status</th>
+      <th>Data</th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let invoice of invoices">
+      <td>
+        {{ invoice.number }}
+      </td>
+
+      <td>
+        {{ invoice.status }}
+      </td>
+
+      <td>
+        {{ invoice.createdAtUtc | date:'dd/MM/yyyy HH:mm' }}
+      </td>
+
+      <td>
+        <a
+          [routerLink]="['/invoices', invoice.id]">
+          Abrir
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<p
+  *ngIf="!loading && invoices.length === 0">
+  Nenhuma nota cadastrada.
+</p>

@@ -1,0 +1,21 @@
+<h2>Produtos</h2>
+
+<p *ngIf="loading">Carregando...</p>
+
+<table *ngIf="!loading">
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Descrição</th>
+      <th>Saldo</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let product of products">
+      <td>{{ product.code }}</td>
+      <td>{{ product.description }}</td>
+      <td>{{ product.stock }}</td>
+    </tr>
+  </tbody>
+</table>

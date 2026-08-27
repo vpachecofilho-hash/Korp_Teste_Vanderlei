@@ -1,0 +1,68 @@
+<p *ngIf="loading">
+  Carregando nota...
+</p>
+
+<p *ngIf="errorMessage">
+  {{ errorMessage }}
+</p>
+
+<section *ngIf="invoice">
+
+  <h2>
+    Nota #{{ invoice.number }}
+  </h2>
+
+  <p>
+    <strong>Status:</strong>
+    {{ invoice.status }}
+  </p>
+
+  <p>
+    <strong>Data:</strong>
+    {{ invoice.createdAtUtc | date:'dd/MM/yyyy HH:mm' }}
+  </p>
+
+  <h3>Itens</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let item of invoice.items">
+        <td>
+          {{ getProductDescription(item.productId) }}
+        </td>
+
+        <td>
+          {{ item.quantity }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <br>
+
+  <button
+    *ngIf="invoice.status === 'Open'"
+    type="button"
+    (click)="closeInvoice()"
+    [disabled]="processing">
+
+    {{
+      processing
+        ? 'Processando...'
+        : 'Imprimir nota'
+    }}
+
+  </button>
+
+  <p *ngIf="invoice.status === 'Closed'">
+    Nota fechada.
+  </p>
+
+</section>
