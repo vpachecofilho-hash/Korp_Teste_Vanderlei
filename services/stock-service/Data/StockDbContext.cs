@@ -10,6 +10,9 @@ public class StockDbContext : DbContext
     {
     }
 
+    public DbSet<StockOperation> StockOperations =>
+    Set<StockOperation>();
+
     public DbSet<Product> Products => Set<Product>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -32,5 +35,14 @@ public class StockDbContext : DbContext
             entity.Property(product => product.Stock)
                 .HasPrecision(18, 3);
         });
+
+        modelBuilder.Entity<StockOperation>(entity =>
+        {
+            entity.HasKey(operation => operation.Id);
+
+            entity.HasIndex(operation => operation.OperationId)
+                .IsUnique();
+        });
+        
     }
 }

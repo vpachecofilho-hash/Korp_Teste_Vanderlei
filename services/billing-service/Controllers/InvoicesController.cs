@@ -3,6 +3,7 @@ using BillingService.DTOs;
 using BillingService.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Net.Http.Json;
 
 namespace BillingService.Controllers;
 
@@ -128,5 +129,81 @@ public class InvoicesController : ControllerBase
             new { id = invoice.Id },
             invoice
         );
+    }
+
+    [HttpPost("{id:guid}/close")]
+    public async Task<ActionResult<Invoice>> Close(Guid id)
+    {
+        var invoice = await _context.Invoices
+            .Include(invoice => invoice.Items)
+            .FirstOrDefaultAsync(invoice => invoice.Id == id);
+
+        if (invoice is null)
+        {
+            return NotFound(new
+            {
+                message = "Invoice not found."
+            });
+        }
+
+        if (invoice.Status != InvoiceStatus.Open)
+        {
+            return Conflict(new
+            {
+                message = "Only open invoices can be closed."
+            });
+        }
+
+        var stockClient = _httpClientFactory.CreateClient("StockService");
+
+        var debitRequest = new StockDebitRequest
+        {
+            OperationId = invoice.Id,
+
+            Items = invoice.Items
+                .Select(item => new StockDebitItemRequest
+                {
+                    ProductId = item.ProductId,
+                    Quantity = item.Quantity
+                })
+                .ToList()
+        };
+
+        HttpResponseMessage stockResponse;
+
+        try
+        {
+            stockResponse = await stockClient.PostAsJsonAsync(
+                "/api/stock/debit",
+                debitRequest
+            );
+        }
+        catch (HttpRequestException)
+        {
+            return StatusCode(
+                StatusCodes.Status503ServiceUnavailable,
+                new
+                {
+                    message = "Stock service is unavailable."
+                }
+            );
+        }
+
+        if (!stockResponse.IsSuccessStatusCode)
+        {
+            var stockError =
+                await stockResponse.Content.ReadFromJsonAsync<ServiceErrorResponse>();
+
+            return BadRequest(new
+            {
+                message = stockError?.Message ?? "Could not update stock."
+            });
+        }
+
+        invoice.Status = InvoiceStatus.Closed;
+
+        await _context.SaveChangesAsync();
+
+        return Ok(invoice);
     }
 }

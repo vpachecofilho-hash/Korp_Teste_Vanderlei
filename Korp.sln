@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockService", "services\st
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BillingService", "services\billing-service\BillingService.csproj", "{CCD540BF-74A6-4D5A-A05F-F2228D572F86}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{A8F5598E-591A-4594-AA3E-41EFD0D0D0CC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StockService.Tests", "tests\StockService.Tests\StockService.Tests.csproj", "{403E3076-815F-4D4E-B870-DF667A424CEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +30,14 @@ Global
 		{CCD540BF-74A6-4D5A-A05F-F2228D572F86}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCD540BF-74A6-4D5A-A05F-F2228D572F86}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCD540BF-74A6-4D5A-A05F-F2228D572F86}.Release|Any CPU.Build.0 = Release|Any CPU
+		{403E3076-815F-4D4E-B870-DF667A424CEF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{403E3076-815F-4D4E-B870-DF667A424CEF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{403E3076-815F-4D4E-B870-DF667A424CEF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{403E3076-815F-4D4E-B870-DF667A424CEF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D87BBDAC-A607-4CBF-88F0-E349D6339AC6} = {14625D1B-03BF-4DD9-877A-C2E3BFA3617B}
 		{CCD540BF-74A6-4D5A-A05F-F2228D572F86} = {14625D1B-03BF-4DD9-877A-C2E3BFA3617B}
+		{403E3076-815F-4D4E-B870-DF667A424CEF} = {A8F5598E-591A-4594-AA3E-41EFD0D0D0CC}
 	EndGlobalSection
 EndGlobal

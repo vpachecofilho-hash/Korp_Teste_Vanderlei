@@ -49,6 +49,26 @@ namespace StockService.Migrations
 
                     b.ToTable("Products");
                 });
+
+            modelBuilder.Entity("StockService.Models.StockOperation", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid>("OperationId")
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("ProcessedAtUtc")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OperationId")
+                        .IsUnique();
+
+                    b.ToTable("StockOperations");
+                });
 #pragma warning restore 612, 618
         }
     }
