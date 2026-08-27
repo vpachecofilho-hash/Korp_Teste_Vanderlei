@@ -1,0 +1,69 @@
+:host {
+  display: block;
+}
+
+.form-fields {
+  width: min(620px, 100%);
+}
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 130px 1fr;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.form-row label {
+  font-weight: 500;
+}
+
+.actions {
+  width: min(620px, 100%);
+
+  display: flex;
+
+  justify-content: flex-end;
+
+  margin-top: 6px;
+}
+
+.invoice-items {
+  margin-top: 28px;
+
+  padding-top: 4px;
+
+  border-top: 1px solid #cfd4d8;
+}
+
+.actions-column {
+  width: 120px;
+  text-align: right;
+}
+
+.footer-actions {
+  margin-top: 24px;
+}
+
+.error-message {
+  color: #b71c1c;
+
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+
+  .form-row {
+    grid-template-columns: 1fr;
+
+    gap: 6px;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}

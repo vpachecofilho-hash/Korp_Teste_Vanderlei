@@ -1,0 +1,42 @@
+form {
+  width: min(620px, 100%);
+}
+
+.form-row {
+  display: grid;
+
+  grid-template-columns: 130px 1fr;
+
+  align-items: center;
+
+  gap: 16px;
+
+  margin-bottom: 18px;
+}
+
+.form-row label {
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+
+  margin-top: 8px;
+}
+
+.message {
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}

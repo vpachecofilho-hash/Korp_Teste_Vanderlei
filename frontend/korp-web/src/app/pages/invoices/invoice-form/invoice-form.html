@@ -1,91 +1,126 @@
 <h2>Nova nota fiscal</h2>
 
-<div>
-  <label>Produto</label>
+<div class="form-fields">
 
-  <select [(ngModel)]="selectedProductId">
-    <option value="">
-      Selecione...
-    </option>
+  <div class="form-row">
+    <label for="product">Produto</label>
 
-    <option
-      *ngFor="let product of products"
-      [value]="product.id">
+    <select
+      id="product"
+      [(ngModel)]="selectedProductId">
 
-      {{ product.code }}
-      -
-      {{ product.description }}
-      (Saldo: {{ product.stock }})
+      <option value="">
+        Selecione...
+      </option>
 
-    </option>
-  </select>
+      <option
+        *ngFor="let product of products"
+        [value]="product.id">
+
+        {{ product.code }}
+        -
+        {{ product.description }}
+        (Saldo: {{ product.stock }})
+
+      </option>
+    </select>
+  </div>
+
+
+  <div class="form-row">
+    <label for="quantity">Quantidade</label>
+
+    <input
+      id="quantity"
+      type="number"
+      min="0.001"
+      step="0.001"
+      [(ngModel)]="quantity">
+  </div>
+
 </div>
 
-<div>
-  <label>Quantidade</label>
 
-  <input
-    type="number"
-    min="0.001"
-    step="0.001"
-    [(ngModel)]="quantity">
+<div class="actions">
+  <button
+    type="button"
+    (click)="addItem()">
+
+    Adicionar produto
+
+  </button>
 </div>
 
-<button
-  type="button"
-  (click)="addItem()">
 
-  Adicionar produto
+<section class="invoice-items">
 
-</button>
+  <h3>Itens da nota</h3>
 
-<hr>
+  <p *ngIf="items.length === 0">
+    Nenhum produto adicionado.
+  </p>
 
-<h3>Itens da nota</h3>
+  <table *ngIf="items.length > 0">
 
-<p *ngIf="items.length === 0">
-  Nenhum produto adicionado.
-</p>
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th class="actions-column"></th>
+      </tr>
+    </thead>
 
-<table *ngIf="items.length > 0">
-  <thead>
-    <tr>
-      <th>Produto</th>
-      <th>Quantidade</th>
-      <th></th>
-    </tr>
-  </thead>
+    <tbody>
 
-  <tbody>
-    <tr *ngFor="let item of items">
-      <td>
-        {{ getProductDescription(item.productId) }}
-      </td>
+      <tr *ngFor="let item of items">
 
-      <td>
-        {{ item.quantity }}
-      </td>
+        <td>
+          {{ getProductDescription(item.productId) }}
+        </td>
 
-      <td>
-        <button
-          type="button"
-          (click)="removeItem(item.productId)">
-          Remover
-        </button>
-      </td>
-    </tr>
-  </tbody>
-</table>
+        <td>
+          {{ item.quantity }}
+        </td>
 
-<p *ngIf="errorMessage">
+        <td class="actions-column">
+
+          <button
+            type="button"
+            (click)="removeItem(item.productId)">
+
+            Remover
+
+          </button>
+
+        </td>
+
+      </tr>
+
+    </tbody>
+
+  </table>
+
+</section>
+
+
+<p
+  class="error-message"
+  *ngIf="errorMessage">
+
   {{ errorMessage }}
+
 </p>
 
-<button
-  type="button"
-  (click)="save()"
-  [disabled]="items.length === 0 || loading">
 
-  {{ loading ? 'Criando...' : 'Criar nota' }}
+<div class="actions footer-actions">
 
-</button>
+  <button
+    type="button"
+    (click)="save()"
+    [disabled]="items.length === 0 || loading">
+
+    {{ loading ? 'Criando...' : 'Criar nota' }}
+
+  </button>
+
+</div>

@@ -1,32 +1,68 @@
 <h2>Novo produto</h2>
 
-<form [formGroup]="form" (ngSubmit)="save()">
+<form
+  [formGroup]="form"
+  (ngSubmit)="save()">
 
-  <div>
-    <label>Código</label>
-    <input formControlName="code">
-  </div>
+  <div class="form-row">
 
-  <div>
-    <label>Descrição</label>
-    <input formControlName="description">
-  </div>
+    <label for="code">
+      Código
+    </label>
 
-  <div>
-    <label>Saldo</label>
     <input
+      id="code"
+      formControlName="code">
+
+  </div>
+
+
+  <div class="form-row">
+
+    <label for="description">
+      Descrição
+    </label>
+
+    <input
+      id="description"
+      formControlName="description">
+
+  </div>
+
+
+  <div class="form-row">
+
+    <label for="stock">
+      Saldo
+    </label>
+
+    <input
+      id="stock"
       type="number"
       formControlName="stock">
+
   </div>
 
-  <button
-    type="submit"
-    [disabled]="form.invalid || loading">
 
-    {{ loading ? 'Salvando...' : 'Salvar' }}
+  <div class="actions">
 
-  </button>
+    <button
+      type="submit"
+      [disabled]="form.invalid || loading">
+
+      {{ loading ? 'Salvando...' : 'Salvar produto' }}
+
+    </button>
+
+  </div>
 
 </form>
 
-<p>{{ message }}</p>
+
+<p
+  class="message"
+  *ngIf="message">
+
+  {{ message }}
+
+</p>
