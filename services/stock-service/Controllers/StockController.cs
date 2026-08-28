@@ -37,7 +37,7 @@ public class StockController : ControllerBase
 
                 return Ok(new
                 {
-                    message = "Operation already processed."
+                    message = "Operação já processada."
                 });
             }
 
@@ -55,7 +55,7 @@ public class StockController : ControllerBase
 
                 return BadRequest(new
                 {
-                    message = "One or more products do not exist."
+                    message = "Um ou mais produtos não existem."
                 });
             }
 
@@ -71,7 +71,7 @@ public class StockController : ControllerBase
                     return BadRequest(new
                     {
                         message =
-                            $"Insufficient stock for product {product.Code}."
+                            $"Estoque insuficiente para o produto {product.Code}."
                     });
                 }
             }
@@ -95,7 +95,7 @@ public class StockController : ControllerBase
 
             return Ok(new
             {
-                message = "Stock updated successfully."
+                message = "Estoque atualizado com sucesso."
             });
         }
         catch

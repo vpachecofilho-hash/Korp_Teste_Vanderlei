@@ -56,7 +56,7 @@ public class ProductsController : ControllerBase
         {
             return Conflict(new
             {
-                message = "A product with this code already exists."
+                message = "Um produto com este código já existe."
             });
         }
 

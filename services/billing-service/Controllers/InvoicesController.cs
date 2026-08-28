@@ -63,7 +63,7 @@ public class InvoicesController : ControllerBase
         {
             return BadRequest(new
             {
-                message = "The same product cannot appear more than once in an invoice."
+                message = "O mesmo produto não pode aparecer mais de uma vez em uma fatura."
             });
         }
         
@@ -81,7 +81,7 @@ public class InvoicesController : ControllerBase
                 {
                     return BadRequest(new
                     {
-                        message = $"Product {item.ProductId} does not exist."
+                        message = $"Produto {item.ProductId} não existe."
                     });
                 }
 
@@ -91,7 +91,7 @@ public class InvoicesController : ControllerBase
                         StatusCodes.Status503ServiceUnavailable,
                         new
                         {
-                            message = "Stock service is unavailable."
+                            message = "Serviço de estoque indisponível."
                         }
                     );
                 }
@@ -103,7 +103,7 @@ public class InvoicesController : ControllerBase
                 StatusCodes.Status503ServiceUnavailable,
                 new
                 {
-                    message = "Stock service is unavailable."
+                    message = "Serviço de estoque indisponível."
                 }
             );
         }
@@ -142,7 +142,7 @@ public class InvoicesController : ControllerBase
         {
             return NotFound(new
             {
-                message = "Invoice not found."
+                message = "Fatura não encontrada."
             });
         }
 
@@ -150,7 +150,7 @@ public class InvoicesController : ControllerBase
         {
             return Conflict(new
             {
-                message = "Only open invoices can be closed."
+                message = "Somente faturas abertas podem ser fechadas."
             });
         }
 
@@ -184,7 +184,7 @@ public class InvoicesController : ControllerBase
                 StatusCodes.Status503ServiceUnavailable,
                 new
                 {
-                    message = "Stock service is unavailable."
+                    message = "Serviço de estoque indisponível."
                 }
             );
         }
@@ -196,7 +196,7 @@ public class InvoicesController : ControllerBase
 
             return BadRequest(new
             {
-                message = stockError?.Message ?? "Could not update stock."
+                message = stockError?.Message ?? "Não foi possível atualizar o estoque."
             });
         }
 
